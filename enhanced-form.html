@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Check-up Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f9f9;
+      color: #333;
+    }
+    header, main, footer {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #00695c;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #e0f2f1;
+    }
+    form {
+      display: grid;
+      gap: 15px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, select, textarea, button {
+      padding: 8px;
+      width: 100%;
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    input[readonly] {
+      background: #eee;
+    }
+    button {
+      background: #00796b;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1em;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #004d40;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+    }
+    video {
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Health Check-up Registration</h1>
+    <p>Please fill out this form to book your health check-up appointment.</p>
+  </header>
+
+  <main>
+    <!-- List -->
+    <section>
+      <h2>Why Regular Check-ups Matter</h2>
+      <ul>
+        <li>Early detection of health issues</li>
+        <li>Better management of chronic conditions</li>
+        <li>Advice for healthy lifestyle changes</li>
+      </ul>
+    </section>
+
+    <!-- Table -->
+    <section>
+      <h2>Available Health Packages</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Package</th>
+            <th>Includes</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Basic</td>
+            <td>Blood Pressure, BMI, Blood Sugar</td>
+            <td>30 mins</td>
+          </tr>
+          <tr>
+            <td>Standard</td>
+            <td>Basic + Cholesterol & Heart Screening</td>
+            <td>1 hour</td>
+          </tr>
+          <tr>
+            <td>Comprehensive</td>
+            <td>Full body check-up + Specialist Consultation</td>
+            <td>2 hours</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Media -->
+    <section>
+      <h2>Health Awareness Video</h2>
+      <p>Watch this short video about the importance of regular health check-ups:</p>
+      <video controls width="100%">
+        <!-- Replace with a real health-related video if required -->
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <!-- Form -->
+    <section>
+      <h2>Appointment Form</h2>
+      <form action="#" method="post" autocomplete="on">
+        <!-- Name -->
+        <div>
+          <label for="fullname">Full Name:</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" placeholder="example@email.com" required>
+        </div>
+
+        <!-- Phone -->
+        <div>
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" placeholder="+254712345678" pattern="^\+?[0-9]{10,15}$" required>
+        </div>
+
+        <!-- Age -->
+        <div>
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" min="1" max="120" required>
+        </div>
+
+        <!-- Gender -->
+        <div>
+          <label>Gender:</label>
+          <input type="radio" id="male" name="gender" value="Male" required>
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="Female">
+          <label for="female">Female</label>
+          <input type="radio" id="other" name="gender" value="Other">
+          <label for="other">Other</label>
+        </div>
+
+        <!-- Symptoms -->
+        <div>
+          <label for="symptoms">Current Symptoms (if any):</label>
+          <textarea id="symptoms" name="symptoms" placeholder="Describe your symptoms..." rows="4"></textarea>
+        </div>
+
+        <!-- Medical history -->
+        <div>
+          <label for="history">Past Medical History:</label>
+          <select id="history" name="history" required>
+            <option value="">-- Select --</option>
+            <option value="none">None</option>
+            <option value="diabetes">Diabetes</option>
+            <option value="hypertension">Hypertension</option>
+            <option value="heart">Heart Disease</option>
+          </select>
+        </div>
+
+        <!-- File upload -->
+        <div>
+          <label for="reports">Upload Previous Medical Reports (PDF):</label>
+          <input type="file" id="reports" name="reports" accept=".pdf">
+        </div>
+
+        <!-- Readonly ID -->
+        <div>
+          <label for="patientid">Patient ID (auto-assigned):</label>
+          <input type="text" id="patientid" name="patientid" value="PAT12345" readonly>
+        </div>
+
+        <!-- Submit -->
+        <div>
+          <button type="submit">Book Appointment</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Healthy Life Clinic</p>
+  </footer>
+</body>
+</html>
